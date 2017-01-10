@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Web3.0</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>cn.studentSystem.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/loginservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>deleteServlet</servlet-name>
+    <servlet-class>cn.studentSystem.deleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteServlet</servlet-name>
+    <url-pattern>/deleteservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>selectStudent</servlet-name>
+    <servlet-class>cn.studentSystem.selectStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>selectStudent</servlet-name>
+    <url-pattern>/selectStudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addStudent</servlet-name>
+    <servlet-class>cn.studentSystem.addStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addStudent</servlet-name>
+    <url-pattern>/addstudent</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>updateStudent</servlet-name>
+    <servlet-class>cn.studentSystem.updateStudent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateStudent</servlet-name>
+    <url-pattern>/updatestudent</url-pattern>
+  </servlet-mapping>
+  <filter>
+  <filter-name>LongFilter</filter-name>
+  <filter-class>com.ittx.web.filter.LongFilter</filter-class>
+  <init-param>
+  <param-name>noFilter</param-name>
+  <param-value>login.jsp;loginservlet;css;images;showStudent.jsp;selectStudent.jsp;updateStudent.jsp;showSelectStudent.jsp</param-value>
+  </init-param>
+  </filter>
+  <filter-mapping>
+  <filter-name>LongFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error500.html</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error404.html</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+  
+  
+</web-app>
